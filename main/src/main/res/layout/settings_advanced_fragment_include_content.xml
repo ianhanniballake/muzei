@@ -114,4 +114,28 @@
         android:paddingLeft="4dp"
         android:text="@string/settings_blur_on_lockscreen" />
 
+    <CheckBox android:id="@+id/show_music_artwork_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_alignLeft="@id/grey_amount"
+        android:layout_alignRight="@id/grey_amount"
+        android:layout_below="@id/blur_on_lockscreen_checkbox"
+        android:textSize="@dimen/settings_text_size_normal"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="#fff"
+        android:paddingLeft="4dp"
+        android:text="@string/settings_show_music_artwork" />
+
+    <ProgressBar
+        android:id="@+id/show_music_artwork_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/show_music_artwork_checkbox"
+        android:layout_alignLeft="@id/dim_amount_label"
+        android:layout_alignRight="@id/dim_amount_label"
+        android:layout_alignTop="@id/show_music_artwork_checkbox"
+        android:gravity="center_vertical|right"/>
+
 </RelativeLayout>
