@@ -236,7 +236,7 @@ public class MuzeiWallpaperService extends GLWallpaperService {
             mRenderer = new MuzeiBlurRenderer(MuzeiWallpaperService.this, this);
             mRenderer.setIsPreview(isPreview());
             mRenderController = new RealRenderController(MuzeiWallpaperService.this,
-                    mRenderer, this);
+                    mRenderer, this, MuzeiContract.Artwork.CONTENT_URI);
             setEGLContextClientVersion(2);
             setEGLConfigChooser(8, 8, 8, 0, 0, 0);
             setRenderer(mRenderer);
