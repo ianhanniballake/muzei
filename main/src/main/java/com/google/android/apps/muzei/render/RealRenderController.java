@@ -61,7 +61,7 @@ public class RealRenderController extends RenderController {
         try {
             // Check if there's rotation
             int rotation = 0;
-            try (InputStream in = mContext.getContentResolver().openInputStream(MuzeiContract.Artwork.CONTENT_URI)) {
+            try (InputStream in = mContext.getContentResolver().openInputStream(mImageUri)) {
                 if (in == null) {
                     return null;
                 }
