@@ -33,6 +33,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.google.android.apps.muzei.api.MuzeiContract;
 import com.google.android.apps.muzei.util.ImageBlurrer;
 import com.google.android.apps.muzei.util.MathUtil;
 import com.squareup.picasso.Picasso;
@@ -208,7 +209,7 @@ public class MuzeiRendererFragment extends Fragment implements
                         MuzeiRendererFragment.this, mDemoFocus);
             } else {
                 mRenderController = new RealRenderController(getContext(), mRenderer,
-                        MuzeiRendererFragment.this);
+                        MuzeiRendererFragment.this, MuzeiContract.Artwork.CONTENT_URI);
             }
             mRenderer.setDemoMode(mDemoMode);
             mRenderController.setVisible(true);

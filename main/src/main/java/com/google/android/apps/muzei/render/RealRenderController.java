@@ -34,22 +34,22 @@ import java.io.InputStream;
 public class RealRenderController extends RenderController {
     private static final String TAG = "RealRenderController";
 
-    private ContentObserver mContentObserver;
+    private final Uri mImageUri;
+    private final ContentObserver mContentObserver;
 
     public RealRenderController(Context context, MuzeiBlurRenderer renderer,
-            Callbacks callbacks) {
+            Callbacks callbacks, Uri imageUri) {
         super(context, renderer, callbacks);
+        mImageUri = imageUri;
         mContentObserver = new ContentObserver(new Handler()) {
             @Override
             public void onChange(boolean selfChange, Uri uri) {
                 reloadCurrentArtwork(false);
             }
         };
-        context.getContentResolver().registerContentObserver(MuzeiContract.Artwork.CONTENT_URI,
+        context.getContentResolver().registerContentObserver(imageUri,
                 true, mContentObserver);
-        if (MuzeiContract.Artwork.getCurrentArtwork(context) != null) {
-            reloadCurrentArtwork(false);
-        }
+        reloadCurrentArtwork(false);
     }
 
     @Override
@@ -65,7 +65,7 @@ public class RealRenderController extends RenderController {
             // Check if there's rotation
             int rotation = 0;
             try {
-                InputStream in = mContext.getContentResolver().openInputStream(MuzeiContract.Artwork.CONTENT_URI);
+                InputStream in = mContext.getContentResolver().openInputStream(mImageUri);
                 ExifInterface exifInterface;
                 if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     exifInterface = new ExifInterface(in);
@@ -83,7 +83,7 @@ public class RealRenderController extends RenderController {
                 Log.w(TAG, "Couldn't open EXIF interface on artwork", e);
             }
             return BitmapRegionLoader.newInstance(
-                    mContext.getContentResolver().openInputStream(MuzeiContract.Artwork.CONTENT_URI), rotation);
+                    mContext.getContentResolver().openInputStream(mImageUri), rotation);
         } catch (IOException e) {
             Log.e(TAG, "Error loading image", e);
             return null;
