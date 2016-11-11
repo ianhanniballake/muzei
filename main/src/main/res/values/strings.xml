@@ -17,6 +17,8 @@
 <resources>
     <string name="app_description">Muzei Live Wallpaper</string>
 
+    <string name="full_screen_title">Full Screen</string>
+
     <string name="settings_title">Muzei Settings</string>
     <string name="settings_blur_amount_title">Blur</string>
     <string name="settings_dim_amount_title">Dim</string>
