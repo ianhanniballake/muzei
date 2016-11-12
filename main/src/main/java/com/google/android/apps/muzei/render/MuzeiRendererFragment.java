@@ -16,7 +16,6 @@
 
 package com.google.android.apps.muzei.render;
 
-import android.annotation.TargetApi;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -24,7 +23,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.opengl.GLSurfaceView;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
@@ -72,19 +70,11 @@ public class MuzeiRendererFragment extends Fragment implements
     }
 
     @Override
-    @TargetApi(Build.VERSION_CODES.KITKAT)
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        boolean simpleDemoMode = false;
-        if (mDemoMode && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            ActivityManager activityManager = (ActivityManager)
-                    getActivity().getSystemService(Context.ACTIVITY_SERVICE);
-            if (activityManager.isLowRamDevice()) {
-                simpleDemoMode = true;
-            }
-        }
-
-        if (simpleDemoMode) {
+        ActivityManager activityManager = (ActivityManager)
+                getActivity().getSystemService(Context.ACTIVITY_SERVICE);
+        if (activityManager.isLowRamDevice()) {
             DisplayMetrics dm = getResources().getDisplayMetrics();
             int targetWidth = dm.widthPixels;
             int targetHeight = dm.heightPixels;
