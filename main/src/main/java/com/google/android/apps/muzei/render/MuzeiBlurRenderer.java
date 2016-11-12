@@ -16,7 +16,6 @@
 
 package com.google.android.apps.muzei.render;
 
-import android.annotation.TargetApi;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -27,7 +26,6 @@ import android.graphics.RectF;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
-import android.os.Build;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -111,17 +109,10 @@ public class MuzeiBlurRenderer implements GLSurfaceView.Renderer {
         recomputeGreyAmount();
     }
 
-    @TargetApi(Build.VERSION_CODES.KITKAT)
     private int getNumberOfKeyframes() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            ActivityManager activityManager = (ActivityManager)
-                    mContext.getSystemService(Context.ACTIVITY_SERVICE);
-            if (activityManager.isLowRamDevice()) {
-                return 1;
-            }
-        }
-
-        return 5;
+        ActivityManager activityManager = (ActivityManager)
+                mContext.getSystemService(Context.ACTIVITY_SERVICE);
+        return activityManager.isLowRamDevice() ? 1 : 5;
     }
 
     public void recomputeMaxPrescaledBlurPixels() {
