@@ -66,6 +66,9 @@ public class RealRenderController extends RenderController {
             int rotation = 0;
             try {
                 InputStream in = mContext.getContentResolver().openInputStream(mImageUri);
+                if (in == null) {
+                    return null;
+                }
                 ExifInterface exifInterface;
                 if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     exifInterface = new ExifInterface(in);
