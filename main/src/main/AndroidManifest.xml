@@ -57,7 +57,7 @@
         <activity
             android:name="com.google.android.apps.muzei.FullScreenActivity"
             android:label="@string/full_screen_title"
-            android:theme="@style/Theme.MuzeiActivity"
+            android:theme="@style/Theme.Muzei"
             android:launchMode="singleTop">
         </activity>
 

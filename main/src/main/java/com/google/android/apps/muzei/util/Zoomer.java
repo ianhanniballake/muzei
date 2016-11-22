@@ -25,7 +25,7 @@ import android.view.animation.Interpolator;
  * A simple class that animates double-touch zoom gestures. Functionally similar to a {@link
  * android.widget.Scroller}.
  */
-class Zoomer {
+public class Zoomer {
     /**
      * The interpolator, used for making zooms animate 'naturally.'
      */

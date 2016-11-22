@@ -21,8 +21,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.apps.muzei.util.PanScaleProxyView
-        android:id="@+id/pan_scale_proxy"
+    <com.google.android.apps.muzei.render.PanScaleRenderView
+        android:id="@+id/pan_scale_render_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

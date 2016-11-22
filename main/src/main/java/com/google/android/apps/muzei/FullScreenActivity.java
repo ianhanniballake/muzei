@@ -17,11 +17,13 @@
 package com.google.android.apps.muzei;
 
 import android.content.ActivityNotFoundException;
+import android.content.ContentUris;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.BaseColumns;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
@@ -36,26 +38,15 @@ import android.widget.Toast;
 
 import com.google.android.apps.muzei.api.Artwork;
 import com.google.android.apps.muzei.api.MuzeiContract;
-import com.google.android.apps.muzei.event.ArtDetailOpenedClosedEvent;
-import com.google.android.apps.muzei.event.ArtworkSizeChangedEvent;
-import com.google.android.apps.muzei.event.SwitchingPhotosStateChangedEvent;
-import com.google.android.apps.muzei.event.WallpaperSizeChangedEvent;
+import com.google.android.apps.muzei.render.PanScaleRenderView;
 import com.google.android.apps.muzei.util.DrawInsetsFrameLayout;
-import com.google.android.apps.muzei.util.PanScaleProxyView;
 import com.google.android.apps.muzei.util.ScrimUtil;
 import com.google.android.apps.muzei.util.TypefaceUtil;
 
 import net.nurik.roman.muzei.R;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-
 public class FullScreenActivity extends AppCompatActivity {
     private static final String TAG = "FullScreenActivity";
-
-    private int mCurrentViewportId = 0;
-    private float mWallpaperAspectRatio;
-    private float mArtworkAspectRatio;
 
     private LoaderManager.LoaderCallbacks<Cursor> mArtworkLoaderCallbacks = new LoaderManager.LoaderCallbacks<Cursor>() {
         @Override
@@ -69,6 +60,8 @@ public class FullScreenActivity extends AppCompatActivity {
             if (!data.moveToFirst()) {
                 return;
             }
+            long id = data.getLong(data.getColumnIndex(BaseColumns._ID));
+            mPanScaleRenderView.setImageUri(ContentUris.withAppendedId(MuzeiContract.Artwork.CONTENT_URI, id));
             Artwork currentArtwork = Artwork.fromCursor(data);
             String titleFont = "AlegreyaSans-Black.ttf";
             String bylineFont = "AlegreyaSans-Medium.ttf";
@@ -120,9 +113,6 @@ public class FullScreenActivity extends AppCompatActivity {
         }
     };
 
-    private boolean mGuardViewportChangeListener;
-    private boolean mDeferResetViewport;
-
     private DrawInsetsFrameLayout mContainerView;
     private View mChromeContainerView;
     private View mStatusBarScrimView;
@@ -130,7 +120,7 @@ public class FullScreenActivity extends AppCompatActivity {
     private TextView mTitleView;
     private TextView mBylineView;
     private TextView mAttributionView;
-    private PanScaleProxyView mPanScaleProxyView;
+    private PanScaleRenderView mPanScaleRenderView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -199,22 +189,9 @@ public class FullScreenActivity extends AppCompatActivity {
         mBylineView = (TextView) findViewById(R.id.byline);
         mAttributionView = (TextView) findViewById(R.id.attribution);
 
-        mPanScaleProxyView = (PanScaleProxyView) findViewById(R.id.pan_scale_proxy);
-        mPanScaleProxyView.setMaxZoom(5);
-        mPanScaleProxyView.setOnViewportChangedListener(
-                new PanScaleProxyView.OnViewportChangedListener() {
-                    @Override
-                    public void onViewportChanged() {
-                        if (mGuardViewportChangeListener) {
-                            return;
-                        }
-
-                        ArtDetailViewport.getInstance().setViewport(
-                                mCurrentViewportId, mPanScaleProxyView.getCurrentViewport(), true);
-                    }
-                });
-        mPanScaleProxyView.setOnOtherGestureListener(
-                new PanScaleProxyView.OnOtherGestureListener() {
+        mPanScaleRenderView = (PanScaleRenderView) findViewById(R.id.pan_scale_render_view);
+        mPanScaleRenderView.setOnOtherGestureListener(
+                new PanScaleRenderView.OnOtherGestureListener() {
                     @Override
                     public void onSingleTapUp() {
                         showHideChrome((mContainerView.getSystemUiVisibility()
@@ -232,38 +209,7 @@ public class FullScreenActivity extends AppCompatActivity {
 
         showHideChrome(true);
 
-        EventBus.getDefault().register(this);
-
-        WallpaperSizeChangedEvent wsce = EventBus.getDefault().getStickyEvent(
-                WallpaperSizeChangedEvent.class);
-        if (wsce != null) {
-            onEventMainThread(wsce);
-        }
-
-        ArtworkSizeChangedEvent asce = EventBus.getDefault().getStickyEvent(
-                ArtworkSizeChangedEvent.class);
-        if (asce != null) {
-            onEventMainThread(asce);
-        }
-
-        ArtDetailViewport fve = EventBus.getDefault().getStickyEvent(ArtDetailViewport.class);
-        if (fve != null) {
-            onEventMainThread(fve);
-        }
-
-        SwitchingPhotosStateChangedEvent spsce = EventBus.getDefault().getStickyEvent(
-                SwitchingPhotosStateChangedEvent.class);
-        if (spsce != null) {
-            onEventMainThread(spsce);
-        }
-
         getSupportLoaderManager().initLoader(1, null, mArtworkLoaderCallbacks);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        EventBus.getDefault().unregister(this);
     }
 
     private void showHideChrome(boolean show) {
@@ -277,94 +223,5 @@ public class FullScreenActivity extends AppCompatActivity {
                     | View.SYSTEM_UI_FLAG_IMMERSIVE;
         }
         mContainerView.setSystemUiVisibility(flags);
-    }
-
-    @Subscribe
-    public void onEventMainThread(WallpaperSizeChangedEvent wsce) {
-        if (wsce.getHeight() > 0) {
-            mWallpaperAspectRatio = wsce.getWidth() * 1f / wsce.getHeight();
-        } else {
-            mWallpaperAspectRatio = mPanScaleProxyView.getWidth()
-                    * 1f / mPanScaleProxyView.getHeight();
-        }
-        resetProxyViewport();
-    }
-
-    @Subscribe
-    public void onEventMainThread(ArtworkSizeChangedEvent ase) {
-        mArtworkAspectRatio = ase.getWidth() * 1f / ase.getHeight();
-        resetProxyViewport();
-    }
-
-    private void resetProxyViewport() {
-        if (mWallpaperAspectRatio == 0 || mArtworkAspectRatio == 0) {
-            return;
-        }
-
-        mDeferResetViewport = false;
-        SwitchingPhotosStateChangedEvent spe = EventBus.getDefault()
-                .getStickyEvent(SwitchingPhotosStateChangedEvent.class);
-        if (spe != null && spe.isSwitchingPhotos()) {
-            mDeferResetViewport = true;
-            return;
-        }
-
-        mPanScaleProxyView.setRelativeAspectRatio(mArtworkAspectRatio / mWallpaperAspectRatio);
-    }
-
-    @Subscribe
-    public void onEventMainThread(ArtDetailViewport e) {
-        if (!e.isFromUser()) {
-            mGuardViewportChangeListener = true;
-            mPanScaleProxyView.setViewport(e.getViewport(mCurrentViewportId));
-            mGuardViewportChangeListener = false;
-        }
-    }
-
-    @Subscribe
-    public void onEventMainThread(SwitchingPhotosStateChangedEvent spe) {
-        mCurrentViewportId = spe.getCurrentId();
-        mPanScaleProxyView.enablePanScale(!spe.isSwitchingPhotos());
-        // Process deferred artwork size change when done switching
-        if (!spe.isSwitchingPhotos() && mDeferResetViewport) {
-            resetProxyViewport();
-        }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        ArtDetailOpenedClosedEvent adoce = EventBus.getDefault()
-                .getStickyEvent(ArtDetailOpenedClosedEvent.class);
-        if (adoce.isArtDetailOpened()) {
-            EventBus.getDefault().postSticky(new ArtDetailOpenedClosedEvent(false));
-        }
-    }
-
-    @Override
-    protected void onPostResume() {
-        super.onPostResume();
-
-        ArtDetailOpenedClosedEvent adoce = EventBus.getDefault()
-                .getStickyEvent(ArtDetailOpenedClosedEvent.class);
-        if (!adoce.isArtDetailOpened()) {
-            EventBus.getDefault().postSticky(new ArtDetailOpenedClosedEvent(true));
-        }
-        mChromeContainerView.setVisibility(View.VISIBLE);
-        if (mStatusBarScrimView != null) {
-            mStatusBarScrimView.setVisibility(View.VISIBLE);
-        }
-
-        // Note: normally should use window animations for this, but there's a bug
-        // on Samsung devices where the wallpaper is animated along with the window for
-        // windows showing the wallpaper (the wallpaper _should_ be static, not part of
-        // the animation).
-        View decorView = getWindow().getDecorView();
-        decorView.setAlpha(0f);
-        decorView.animate().cancel();
-        decorView.animate()
-                .setStartDelay(500)
-                .alpha(1f)
-                .setDuration(300);
     }
 }
