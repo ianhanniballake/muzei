@@ -21,6 +21,7 @@ import android.content.ContentUris;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.BaseColumns;
@@ -36,9 +37,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.davemorrissey.labs.subscaleview.ImageSource;
+import com.davemorrissey.labs.subscaleview.ImageViewState;
+import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import com.google.android.apps.muzei.api.Artwork;
 import com.google.android.apps.muzei.api.MuzeiContract;
-import com.google.android.apps.muzei.render.PanScaleRenderView;
+import com.google.android.apps.muzei.render.ImageUtil;
 import com.google.android.apps.muzei.util.DrawInsetsFrameLayout;
 import com.google.android.apps.muzei.util.ScrimUtil;
 import com.google.android.apps.muzei.util.TypefaceUtil;
@@ -47,6 +51,7 @@ import net.nurik.roman.muzei.R;
 
 public class FullScreenActivity extends AppCompatActivity {
     private static final String TAG = "FullScreenActivity";
+    private static final String IMAGE_VIEW_STATE = "IMAGE_VIEW_STATE";
 
     private LoaderManager.LoaderCallbacks<Cursor> mArtworkLoaderCallbacks = new LoaderManager.LoaderCallbacks<Cursor>() {
         @Override
@@ -61,7 +66,15 @@ public class FullScreenActivity extends AppCompatActivity {
                 return;
             }
             long id = data.getLong(data.getColumnIndex(BaseColumns._ID));
-            mPanScaleRenderView.setImageUri(ContentUris.withAppendedId(MuzeiContract.Artwork.CONTENT_URI, id));
+            final Uri uri = ContentUris.withAppendedId(MuzeiContract.Artwork.CONTENT_URI, id);
+            new ImageUtil.RotationAsyncTask(FullScreenActivity.this) {
+                @Override
+                protected void onPostExecute(Integer rotation) {
+                    mImageView.setOrientation(rotation);
+                    mImageView.setImage(ImageSource.uri(uri), mSavedImageViewState);
+                    mSavedImageViewState = null;
+                }
+            }.execute(uri);
             Artwork currentArtwork = Artwork.fromCursor(data);
             String titleFont = "AlegreyaSans-Black.ttf";
             String bylineFont = "AlegreyaSans-Medium.ttf";
@@ -120,7 +133,9 @@ public class FullScreenActivity extends AppCompatActivity {
     private TextView mTitleView;
     private TextView mBylineView;
     private TextView mAttributionView;
-    private PanScaleRenderView mPanScaleRenderView;
+    private SubsamplingScaleImageView mImageView;
+
+    private ImageViewState mSavedImageViewState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -189,15 +204,19 @@ public class FullScreenActivity extends AppCompatActivity {
         mBylineView = (TextView) findViewById(R.id.byline);
         mAttributionView = (TextView) findViewById(R.id.attribution);
 
-        mPanScaleRenderView = (PanScaleRenderView) findViewById(R.id.pan_scale_render_view);
-        mPanScaleRenderView.setOnOtherGestureListener(
-                new PanScaleRenderView.OnOtherGestureListener() {
-                    @Override
-                    public void onSingleTapUp() {
-                        showHideChrome((mContainerView.getSystemUiVisibility()
-                                & View.SYSTEM_UI_FLAG_LOW_PROFILE) != 0);
-                    }
-                });
+        mImageView = (SubsamplingScaleImageView) findViewById(R.id.image_view);
+        mImageView.setMinimumScaleType(SubsamplingScaleImageView.SCALE_TYPE_CENTER_CROP);
+        mImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showHideChrome((mContainerView.getSystemUiVisibility()
+                        & View.SYSTEM_UI_FLAG_LOW_PROFILE) != 0);
+            }
+        });
+        // Get the previous state, if any. This will be used when the image is loaded
+        mSavedImageViewState = savedInstanceState != null
+                ? (ImageViewState) savedInstanceState.getSerializable(IMAGE_VIEW_STATE)
+                : null;
 
         mContainerView.setOnInsetsCallback(new DrawInsetsFrameLayout.OnInsetsCallback() {
             @Override
@@ -223,5 +242,14 @@ public class FullScreenActivity extends AppCompatActivity {
                     | View.SYSTEM_UI_FLAG_IMMERSIVE;
         }
         mContainerView.setSystemUiVisibility(flags);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        ImageViewState state = mImageView.getState();
+        if (state != null) {
+            outState.putSerializable(IMAGE_VIEW_STATE, state);
+        }
     }
 }
