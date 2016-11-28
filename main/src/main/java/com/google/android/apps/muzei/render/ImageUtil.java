@@ -16,10 +16,23 @@
 
 package com.google.android.apps.muzei.render;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.media.ExifInterface;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Build;
+import android.util.Log;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class ImageUtil {
+    private static final String TAG = "ImageUtil";
+
     // Make sure input images are very small!
     public static float calculateDarkness(Bitmap bitmap) {
         if (bitmap == null) {
@@ -54,5 +67,56 @@ public class ImageUtil {
             sampleSize <<= 1;
         }
         return sampleSize;
+    }
+
+    public static class RotationAsyncTask extends AsyncTask<Uri, Void, Integer> {
+        private final Context mContext;
+
+        public RotationAsyncTask(Context context) {
+            mContext = context;
+        }
+
+        @Override
+        protected Integer doInBackground(Uri... uris) {
+            int rotation = 0;
+            try {
+                InputStream in = mContext.getContentResolver().openInputStream(uris[0]);
+                ExifInterface exifInterface;
+                if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    exifInterface = new ExifInterface(in);
+                } else {
+                    exifInterface = new ExifInterface(writeArtworkToFile(in).getAbsolutePath());
+                }
+                int orientation = exifInterface.getAttributeInt(
+                        ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+                switch (orientation) {
+                    case ExifInterface.ORIENTATION_ROTATE_90: rotation = 90; break;
+                    case ExifInterface.ORIENTATION_ROTATE_180: rotation = 180; break;
+                    case ExifInterface.ORIENTATION_ROTATE_270: rotation = 270; break;
+                }
+            } catch (IOException e) {
+                Log.w(TAG, "Couldn't open EXIF interface on artwork", e);
+            }
+            return rotation;
+        }
+
+        private File writeArtworkToFile(InputStream in) throws IOException {
+            File file = new File(mContext.getCacheDir(), "temp_artwork");
+            FileOutputStream out = new FileOutputStream(file);
+            try {
+                byte[] buffer = new byte[1024];
+                int bytesRead;
+                while ((bytesRead = in.read(buffer)) > 0) {
+                    out.write(buffer, 0, bytesRead);
+                }
+                out.flush();
+            } finally {
+                try {
+                    out.close();
+                } catch (IOException ignored) {
+                }
+            }
+            return file;
+        }
     }
 }

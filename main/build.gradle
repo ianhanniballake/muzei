@@ -120,6 +120,7 @@ dependencies {
     prodCompile "com.google.firebase:firebase-crash:$rootProject.ext.googlePlayServicesVersion"
     compile "com.twofortyfouram:android-plugin-api-for-locale:1.0.2"
     compile "org.greenrobot:eventbus:3.0.0"
+    compile "com.davemorrissey.labs:subsampling-scale-image-view:3.6.0"
     compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
     compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
