@@ -50,15 +50,13 @@
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
             </intent-filter>
-            <meta-data android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts" />
         </activity>
 
         <activity
             android:name="com.google.android.apps.muzei.FullScreenActivity"
             android:label="@string/full_screen_title"
             android:theme="@style/Theme.Muzei"
-            android:launchMode="singleTop">
+            android:parentActivityName="com.google.android.apps.muzei.MuzeiActivity">
         </activity>
 
         <service
