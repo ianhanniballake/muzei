@@ -42,6 +42,7 @@ import com.google.android.apps.muzei.render.MuzeiBlurRenderer;
 import com.google.android.apps.muzei.render.RealRenderController;
 import com.google.android.apps.muzei.render.RenderController;
 import com.google.android.apps.muzei.shortcuts.ArtworkInfoShortcutController;
+import com.google.android.apps.muzei.shortcuts.FullScreenShortcutController;
 import com.google.android.apps.muzei.sync.TaskQueueService;
 import com.google.android.apps.muzei.wearable.WearableController;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -59,8 +60,8 @@ public class MuzeiWallpaperService extends GLWallpaperService {
     private ContentObserver mNotificationContentObserver;
     private HandlerThread mWearableHandlerThread;
     private ContentObserver mWearableContentObserver;
-    private HandlerThread mArtworkInfoShortcutHandlerThread;
-    private ContentObserver mArtworkInfoShortcutContentObserver;
+    private HandlerThread mArtworkShortcutHandlerThread;
+    private ContentObserver mArtworkShortcutContentObserver;
 
     @Override
     public Engine onCreateEngine() {
@@ -111,18 +112,19 @@ public class MuzeiWallpaperService extends GLWallpaperService {
 
         // Set up a thread to update the Artwork Info shortcut whenever the artwork changes
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
-            mArtworkInfoShortcutHandlerThread = new HandlerThread("MuzeiWallpaperService-ArtworkInfoShortcut");
-            mArtworkInfoShortcutHandlerThread.start();
-            mArtworkInfoShortcutContentObserver = new ContentObserver(new Handler(
-                    mArtworkInfoShortcutHandlerThread.getLooper())) {
+            mArtworkShortcutHandlerThread = new HandlerThread("MuzeiWallpaperService-ArtworkShortcut");
+            mArtworkShortcutHandlerThread.start();
+            mArtworkShortcutContentObserver = new ContentObserver(new Handler(
+                    mArtworkShortcutHandlerThread.getLooper())) {
                 @RequiresApi(api = Build.VERSION_CODES.N_MR1)
                 @Override
                 public void onChange(final boolean selfChange, final Uri uri) {
                     ArtworkInfoShortcutController.updateShortcut(MuzeiWallpaperService.this);
+                    FullScreenShortcutController.updateShortcut(MuzeiWallpaperService.this);
                 }
             };
             getContentResolver().registerContentObserver(MuzeiContract.Artwork.CONTENT_URI,
-                    true, mArtworkInfoShortcutContentObserver);
+                    true, mArtworkShortcutContentObserver);
         }
     }
 
@@ -130,8 +132,8 @@ public class MuzeiWallpaperService extends GLWallpaperService {
     public void onDestroy() {
         super.onDestroy();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
-            getContentResolver().unregisterContentObserver(mArtworkInfoShortcutContentObserver);
-            mArtworkInfoShortcutHandlerThread.quitSafely();
+            getContentResolver().unregisterContentObserver(mArtworkShortcutContentObserver);
+            mArtworkShortcutHandlerThread.quitSafely();
         }
         getContentResolver().unregisterContentObserver(mWearableContentObserver);
         mWearableHandlerThread.quitSafely();
