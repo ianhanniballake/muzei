@@ -78,7 +78,7 @@ public class FullScreenActivity extends AppCompatActivity {
             Artwork currentArtwork = Artwork.fromCursor(data);
             String titleFont = "AlegreyaSans-Black.ttf";
             String bylineFont = "AlegreyaSans-Medium.ttf";
-            if (Artwork.FONT_TYPE_ELEGANT.equals(currentArtwork.getMetaFont())) {
+            if (MuzeiContract.Artwork.META_FONT_TYPE_ELEGANT.equals(currentArtwork.getMetaFont())) {
                 titleFont = "Alegreya-BlackItalic.ttf";
                 bylineFont = "Alegreya-Italic.ttf";
             }
