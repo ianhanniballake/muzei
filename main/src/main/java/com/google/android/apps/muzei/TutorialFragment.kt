@@ -32,7 +32,9 @@ import android.view.animation.OvershootInterpolator
 import android.widget.ImageView
 import androidx.core.animation.doOnEnd
 import androidx.core.content.edit
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.analytics.FirebaseAnalytics
+import net.nurik.roman.muzei.ActivateDirections
 import net.nurik.roman.muzei.R
 
 class TutorialFragment : Fragment() {
@@ -61,6 +63,7 @@ class TutorialFragment : Fragment() {
             PreferenceManager.getDefaultSharedPreferences(context).edit {
                 putBoolean(PREF_SEEN_TUTORIAL, true)
             }
+            findNavController().navigate(ActivateDirections.action_finish())
         }
 
         if (savedInstanceState == null) {

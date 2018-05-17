@@ -28,10 +28,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.apps.muzei.settings.EffectsFragment
 import com.google.android.apps.muzei.sources.ChooseSourceFragment
 import com.google.android.apps.muzei.util.makeCubicGradientScrimDrawable
+import com.google.android.apps.muzei.wallpaper.WallpaperActiveState
 import com.google.firebase.analytics.FirebaseAnalytics
 import net.nurik.roman.muzei.R
 
@@ -142,6 +144,13 @@ class MainFragment : Fragment(), ChooseSourceFragment.Callbacks {
                             bottomNavigationView.visibility = View.GONE
                         }
                     }
+        }
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        if (WallpaperActiveState.value != true) {
+            findNavController().navigate(MainFragmentDirections.activate_wallpaper())
         }
     }
 

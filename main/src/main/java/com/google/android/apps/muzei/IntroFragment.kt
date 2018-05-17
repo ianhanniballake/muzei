@@ -21,16 +21,18 @@ import android.content.ActivityNotFoundException
 import android.content.ComponentName
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.toast
-
+import androidx.navigation.fragment.findNavController
 import com.google.android.apps.muzei.util.AnimatedMuzeiLogoFragment
+import com.google.android.apps.muzei.wallpaper.WallpaperActiveState
 import com.google.firebase.analytics.FirebaseAnalytics
-
+import net.nurik.roman.muzei.ActivateDirections
 import net.nurik.roman.muzei.R
 
 class IntroFragment : Fragment() {
@@ -76,7 +78,15 @@ class IntroFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        if (savedInstanceState == null) {
+        if (WallpaperActiveState.value == true) {
+            val sp = PreferenceManager.getDefaultSharedPreferences(requireContext())
+            val seenTutorial = sp.getBoolean(TutorialFragment.PREF_SEEN_TUTORIAL, false)
+            if (seenTutorial) {
+                findNavController().navigate(ActivateDirections.action_finish())
+            } else {
+                findNavController().navigate(IntroFragmentDirections.show_tutorial())
+            }
+        } else if (savedInstanceState == null) {
             val logoFragment = AnimatedMuzeiLogoFragment()
             childFragmentManager.beginTransaction()
                     .add(R.id.animated_logo_fragment, logoFragment)
