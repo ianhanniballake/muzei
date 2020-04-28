@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Copyright 2014 Google Inc.
+  Copyright 2017 Google Inc.
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -15,12 +15,8 @@
   limitations under the License.
   -->
 <resources>
-    <string name="complication_artwork_label">Artwork</string>
-    <string name="next_artwork">Next artwork</string>
-    <string name="provider_title">Current Source</string>
-    <string name="provider_settings">Source Settings</string>
-    <string name="config_show_date_title">Date</string>
-    <string name="config_top_complication_title">Top Complication</string>
-    <string name="config_bottom_complication_title">Bottom Complication</string>
-    <string name="config_tap_title">Tap Action</string>
+    <string name="single_title">Single Artwork</string>
+    <string name="single_description">Display a single image of your choosing</string>
+    <string name="single_get_content_failure">Unable to open the image picker</string>
+    <string name="single_default_artwork_title">Your artwork</string>
 </resources>
