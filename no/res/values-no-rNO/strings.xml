@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="featuredart_source_title">Featured art</string>
+    <string name="featuredart_source_description">A new painting every day</string>
+    <string name="featuredart_source_action_view_archive">View archive</string>
+    <string name="featuredart_action_share_artwork">Share artwork</string>
+</resources>
