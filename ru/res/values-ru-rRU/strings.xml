@@ -1,58 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Copyright 2014 Google Inc.
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
-  -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="gallery_add_fab">Add photos</string>
-    <string name="gallery_add_photos">Add photos</string>
-    <string name="gallery_add_folder">Import photos from <xliff:g id="app_name" example="Gallery">%s</xliff:g></string>
-    <string name="gallery_internal_storage_message">Don\'t see anything? Try enabling internal storage in the overflow menu</string>
-    <string name="gallery_add_photos_error">Your device does not support adding pictures.\nPlease contact your manufacturer.</string>
-    <string name="gallery_add_folder_error">Your device does not support adding folders.\nPlease contact your manufacturer.</string>
-    <string name="gallery_action_clear_photos">Remove all photos</string>
-    <string name="gallery_action_import_photos">Import photos…</string>
-    <string name="gallery_action_import_photos_from">Import photos from <xliff:g id="app_name" example="Gallery">%s</xliff:g></string>
-    <string name="gallery_import_dialog_title">Import photos from</string>
-    <string name="gallery_action_remove">Remove</string>
-    <string name="gallery_title">My Photos</string>
-    <string name="gallery_description">Random camera photos</string>
-    <plurals name="gallery_description_choice_template">
-        <item quantity="one"><xliff:g id="quantity" example="1">%1$d</xliff:g> photo</item>
-        <item quantity="few"><xliff:g id="quantity" example="2">%1$d</xliff:g> photos</item>
-        <item quantity="many"><xliff:g id="quantity" example="2">%1$d</xliff:g> photos</item>
-        <item quantity="other"><xliff:g id="quantity" example="2">%1$d</xliff:g> photos</item>
-    </plurals>
-    <string name="gallery_empty">Random camera photos</string>
-    <string name="gallery_empty_subtitle">Choose specific photos instead</string>
-    <string name="gallery_from_gallery">From your gallery</string>
-    <string name="gallery_touch_to_view">Touch to view</string>
-    <string name="gallery_shared_from">Shared from <xliff:g id="app_name" example="Gallery">%s</xliff:g></string>
-    <plurals name="gallery_add_photos_success">
-        <item quantity="one">Successfully added the image\nto the \"My Photos\" source</item>
-        <item quantity="few">Successfully added <xliff:g id="quantity" example="2">%d</xliff:g> images\nto the \"My Photos\" source</item>
-        <item quantity="many">Successfully added <xliff:g id="quantity" example="2">%d</xliff:g> images\nto the \"My Photos\" source</item>
-        <item quantity="other">Successfully added <xliff:g id="quantity" example="2">%d</xliff:g> images\nto the \"My Photos\" source</item>
-    </plurals>
-    <plurals name="gallery_add_photos_failure">
-        <item quantity="one">Unable to add the image\nto the \"My Photos\" source</item>
-        <item quantity="few">Unable to add <xliff:g id="quantity" example="2">%d</xliff:g> images\nto the \"My Photos\" source</item>
-        <item quantity="many">Unable to add <xliff:g id="quantity" example="2">%d</xliff:g> images\nto the \"My Photos\" source</item>
-        <item quantity="other">Unable to add <xliff:g id="quantity" example="2">%d</xliff:g> images\nto the \"My Photos\" source</item>
-    </plurals>
-    <string name="gallery_enable_random">Enable random camera photos</string>
-    <string name="gallery_permission_rationale">Allow the storage permission to show random photos as your background.</string>
-    <string name="gallery_edit_settings">Edit App Permissions</string>
-    <string name="gallery_denied_explanation">You must enable the <b>Storage</b> permission to use random photos as your background.</string>
+<resources>
+    <string name="featuredart_source_title">Featured art</string>
+    <string name="featuredart_source_description">A new painting every day</string>
+    <string name="featuredart_source_action_view_archive">View archive</string>
+    <string name="featuredart_action_share_artwork">Share artwork</string>
 </resources>
