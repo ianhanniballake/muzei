@@ -24,7 +24,7 @@
     <string name="gallery_action_clear_photos">移除所有照片</string>
     <string name="gallery_action_import_photos">导入照片…</string>
     <string name="gallery_action_import_photos_from">从 <xliff:g id="app_name" example="Gallery">%s</xliff:g> 导入照片</string>
-    <string name="gallery_import_dialog_title">从...导入照片</string>
+    <string name="gallery_import_dialog_title">从…导入照片</string>
     <string name="gallery_action_remove">移除</string>
     <string name="gallery_title">我的照片</string>
     <string name="gallery_description">随机相机照片</string>
