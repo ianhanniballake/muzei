@@ -17,10 +17,10 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="gallery_add_fab">Додати фото</string>
     <string name="gallery_add_photos">Додати фото</string>
-    <string name="gallery_add_folder">Імпорт фотографій з <xliff:g id="app_name" example="Галереї">%s</xliff:g></string>
+    <string name="gallery_add_folder">Імпорт фотографій з <xliff:g id="app_name" example="Gallery">%s</xliff:g></string>
     <string name="gallery_action_clear_photos">Видалити всі фотографії</string>
     <string name="gallery_action_import_photos">Імпорт фотографій…</string>
-    <string name="gallery_action_import_photos_from">Імпорт фотографій з <xliff:g id="app_name" example="Галереї">%s</xliff:g></string>
+    <string name="gallery_action_import_photos_from">Імпорт фотографій з <xliff:g id="app_name" example="Gallery">%s</xliff:g></string>
     <string name="gallery_import_dialog_title">Імпорт фото з</string>
     <string name="gallery_action_remove">Видалити</string>
     <string name="gallery_title">Мої фото</string>
@@ -29,7 +29,7 @@
     <string name="gallery_empty_subtitle">Певні фото</string>
     <string name="gallery_from_gallery">З вашої галереї</string>
     <string name="gallery_touch_to_view">Торкніться, щоб переглянути</string>
-    <string name="gallery_shared_from">Поширено з <xliff:g id="app_name" example="Галерея">%s</xliff:g></string>
+    <string name="gallery_shared_from">Поширено з <xliff:g id="app_name" example="Gallery">%s</xliff:g></string>
     <string name="gallery_enable_random">Увімкнути випадкові фото камери</string>
     <string name="gallery_edit_settings">Редагувати дозволи додатку</string>
 </resources>
