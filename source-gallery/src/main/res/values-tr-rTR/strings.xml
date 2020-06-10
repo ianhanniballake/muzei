@@ -29,33 +29,20 @@
     <string name="gallery_title">Fotoğraflarım</string>
     <string name="gallery_description">Rastgele fotoğraflar</string>
     <plurals name="gallery_description_choice_template">
-        <item quantity="one"><xliff:g id="quantity" example="1">%1$d</xliff:g> fotoğraf
-<xliff:g id="quantity" example="2">%1$d</xliff:g> fotoğraflar</item>
-        <item quantity="other"><xliff:g id="quantity" example="1">%1$d</xliff:g> fotoğraf</item>
+        <item quantity="one"><xliff:g id="quantity" example="1">%1$d</xliff:g> fotoğraf</item>
+        <item quantity="other"><xliff:g id="quantity" example="2">%1$d</xliff:g> fotoğraflar</item>
     </plurals>
     <string name="gallery_empty">Rastgele fotoğraflar</string>
     <string name="gallery_empty_subtitle">Bunun yerine belirli fotoğrafları seçin</string>
     <string name="gallery_from_gallery">Galerinizden</string>
     <string name="gallery_shared_from">Tarafından paylaşıldı <xliff:g id="app_name" example="Gallery">%s</xliff:g></string>
     <plurals name="gallery_add_photos_success">
-        <item quantity="one">Resim başarıyla eklendi\içine \"Benim fotoğraflarım\" kaynak
-
-Başarıyla eklendi &lt;xliff:g id=\"miktar\" 
-misal=\"2\"&gt;%d&lt;/xliff:g&gt; resim\içine \"Benim fotoğraflarım\" kaynak</item>
-        <item quantity="other">Resim başarıyla eklendi\içine \"Benim fotoğraflarım\" kaynak
-
-Başarıyla eklendi &lt;xliff:g id=\"miktar\" 
-misal=\"2\"&gt;%d&lt;/xliff:g&gt; resim\içine \"Benim fotoğraflarım\" kaynak</item>
+        <item quantity="one">Resim başarıyla eklendi\niçine \"Benim fotoğraflarım\" kaynak</item>
+        <item quantity="other">Başarıyla eklendi <xliff:g id="quantity" example="2">%d</xliff:g> resim\niçine \"Benim fotoğraflarım\" kaynak</item>
     </plurals>
     <plurals name="gallery_add_photos_failure">
-        <item quantity="one">Resim eklenemedi\içine \"Benim fotoğraflarım\" kaynak
-
-Eklenemedi &lt;xliff:g id=\"miktar\" 
-misal=\"2\"&gt;%d&lt;/xliff:g&gt; resim\içine \"Benim fotoğraflarım\" kaynak</item>
-        <item quantity="other">Resim eklenemedi\içine \"Benim fotoğraflarım\" kaynak
-
-Eklenemedi &lt;xliff:g id=\"miktar\" 
-misal=\"2\"&gt;%d&lt;/xliff:g&gt; resim\içine \"Benim fotoğraflarım\" kaynak</item>
+        <item quantity="one">Resim eklenemedi\niçine \"Benim fotoğraflarım\" kaynak</item>
+        <item quantity="other">Eklenemedi <xliff:g id="quantity" example="2">%d</xliff:g> resim\niçine \"Benim fotoğraflarım\" kaynak</item>
     </plurals>
     <string name="gallery_enable_random">Rastgele kamera fotoğraflarını etkinleştir</string>
     <string name="gallery_permission_rationale">Depolama alanı izninin rastgele fotoğrafları arka plan olarak göstermesine izin verin.</string>
