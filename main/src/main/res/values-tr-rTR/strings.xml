@@ -46,8 +46,8 @@
     <string name="auto_advance_interval_never">Otomatik geçme</string>
     <string name="auto_advance_tasker">Duvar kağıdınızı neyin tetiklediğini tam olarak kontrol etmek için
          değiştirmek için şu sayfada bulunan \'Sonraki resim\' eylemini kullanın
-         Eklenti altında &lt;xliff: g id = "kılıf_ismi"&gt; kılıf&lt;/ xliff: g&gt; -&gt;
-         &lt;xliff: g id = "muzei_name"&gt; Muzei &lt;/ xliff: g&gt; ve burada otomatik ilerlemeyi devre dışı bırak.</string>
+         Eklenti altında <xliff:g id="tasker_name">kılıf</xliff:g> -&gt;
+         <xliff:g id="muzei_name">Muzei</xliff:g> ve burada otomatik ilerlemeyi devre dışı bırak.</string>
     <string name="action_activate">Etkinleştir</string>
     <string name="error_view_details">Sanat eseri detayları görüntülenemiyor.</string>
     <string name="error_wallpaper_chooser">Arkaplan seçici başlatılamadı. Ana ekranda canlı arkaplan menüsünü seçerek, <xliff:g id="muzei_name">Muzei</xliff:g>\'yi aktifleştirebilirsiniz.</string>
@@ -62,32 +62,20 @@
     <string name="provider_settings">Ayarlar</string>
     <string name="provider_browse">Araştır</string>
     <string name="legacy_notification_channel_name">Eski bilgiler</string>
-    <string name="legacy_notification_title">&lt;xliff: g id = "kaynak_adı" example = "Güzel Duvar Kağıtları"&gt;% s &lt;/ xliff: g&gt;
+    <string name="legacy_notification_title"><xliff:g id="source_name" example="Güzel Duvar Kağıtları">%s</xliff:g>
          artık desteklenmiyor</string>
-    <string name="legacy_notification_text">&lt;xliff: g id = "muzei_name"&gt; Muzei &lt;/ xliff: g&gt; yapmaz
+    <string name="legacy_notification_text"><xliff:g id="muzei_name">Muzei</xliff:g> yapmaz
          Eski Kaynak API\'sı ile oluşturulan kaynakları doğrudan destekleyin.</string>
     <string name="legacy_action_learn_more">Daha fazla bilgi edin</string>
     <string name="legacy_action_send_feedback">Geri bildirim gönder</string>
     <string name="legacy_summary_title">Eski kaynaklar artık desteklenmiyor</string>
     <plurals name="legacy_summary_text">
-        <item quantity="one"> <xliff:g id="miktar" örnek="1">%1$d</xliff:g> Eski kaynaklar bulundu
-  <xliff:g id="miktar" örnek="1">%1$d</xliff:g> Eski Kaynaklar bulundu</item>
-        <item quantity="other">&lt;xliff:g id="miktar" örnek"1"&gt;%1$d&lt;/xliff:g&gt; 
-Eski kaynak bulundu
-
-&lt;xliff:g id="miktar" örnek" ="2"&gt;%1$d&lt;/xliff:g&gt;
-Eski kaynak bulundu</item>
+        <item quantity="one"><xliff:g id="quantity" örnek="1">%1$d</xliff:g> Eski kaynaklar bulundu</item>
+        <item quantity="other"><xliff:g id="quantity" example="2">%1$d</xliff:g> Eski kaynak bulundu</item>
     </plurals>
     <plurals name="legacy_unsupported_text">
-        <item quantity="one"><xliff:g id="miktar" örnek="1">%1$d</xliff:g>
-desteklenmeyen kaynak bulundu
-
-<xliff:g id="miktar" örnek="1">%1$d</xliff:g>
-desteklenmeyen kaynak bulundu</item>
-        <item quantity="other"><xliff:g id="miktar" örnek="1">%1$d</xliff:g>
-desteklenmeyen kaynak bulundu
-
-<xliff:g id="miktar" örnek="1">%1$d</xliff:g>
+        <item quantity="one"><xliff:g id="quantity" example="1">%1$d</xliff:g> desteklenmeyen kaynak bulundu</item>
+        <item quantity="other"><xliff:g id="quantity" example="1">%1$d</xliff:g>
 desteklenmeyen kaynak bulundu</item>
     </plurals>
     <string name="legacy_source_info_title">Eski Kaynaklar</string>
@@ -111,8 +99,8 @@ desteklenmeyen kaynak bulundu</item>
     <string name="browse_refresh">Yenile</string>
     <string name="browse_set_wallpaper">Geçerli duvar kağıdını ayarla</string>
     <string name="browse_set_wallpaper_with_title">Geçerli duvar kağıtları
-        \"<xliff:g id="resim ismi" örnek="IMG14227.jpg">%s</xliff:g>\" olarak ayarla</string>
-    <string name="missing_resources_title">Geçersiz<xliff:g id="muzei_name">Muzei</xliff:g> Kurulum</string>
+        \"<xliff:g id="image_name" örnek="IMG14227.jpg">%s</xliff:g>\" olarak ayarla</string>
+    <string name="missing_resources_title">Geçersiz <xliff:g id="muzei_name">Muzei</xliff:g> Kurulum</string>
     <string name="missing_resources_message"><xliff:g id="muzei_name">Muzei</xliff:g> içinde
         geçersiz durum. Lütfen kaldırın <xliff:g id="muzei_name">Muzei</xliff:g> ve yükle
          itibaren <xliff:g id="google_play">Google Play</xliff:g> Onarım için saklayın 
@@ -120,7 +108,7 @@ desteklenmeyen kaynak bulundu</item>
     <string name="missing_resources_open"><xliff:g id="google_play">Google Play</xliff:g> mağazasını aç</string>
     <string name="missing_resources_quit"><xliff:g id="muzei_name">Muzei</xliff:g>\'yi kapat</string>
     <string name="tasker_setting_dialog_title">Eylem seçin</string>
-    <string name="tasker_action_select_provider"><xliff:g id="kaymak ismi" example=" Güzel duvar kağıtları">%s</xliff:g></string>
+    <string name="tasker_action_select_provider"><xliff:g id="source_name" example=" Güzel duvar kağıtları">%s</xliff:g></string>
     <string name="actions_gestures">Hareketleri Özelleştir</string>
     <string name="gestures_title">Hareketler</string>
     <string name="gestures_double_tap_title">Çift Dokunma</string>
