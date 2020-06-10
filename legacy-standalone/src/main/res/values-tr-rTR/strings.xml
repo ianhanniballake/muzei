@@ -27,8 +27,8 @@
     <string name="legacy_action_next_artwork">Sonraki sanat eseri</string>
     <string name="legacy_source_unavailable">Seçtiğiniz kaynağa ulaşılamıyor. Varsayılan kaynağa geçiş yapılıyor.</string>
     <string name="legacy_source_target_too_high_title">Bu kaynak devre dışı</string>
-    <string name="legacy_source_target_too_high_message"><xliff:g id="kaynak ismi" example="Güzel duvar kağıtları">%s</xliff:g><xliff:g id="muzei_name"> Muzei</xliff:g>\'nin bu API seviyesi ile uyumlu değildir. Geliştirici bu kaynağı kullanmak için <xliff:g id="targetSdkVersion">targetSdkVersion\'u</xliff:g> 25 ya da daha altı ile değiştirmelidir.</string>
-    <string name="legacy_source_target_too_high_send_feedback">Geribildirim <xliff:g id="kaynak ismi" örnek="Güzel duvar kağıtları">%s</xliff:g> gönder</string>
+    <string name="legacy_source_target_too_high_message"><xliff:g id="source_name" example="Güzel duvar kağıtları">%s</xliff:g><xliff:g id="muzei_name"> Muzei</xliff:g>\'nin bu API seviyesi ile uyumlu değildir. Geliştirici bu kaynağı kullanmak için <xliff:g id="targetSdkVersion">targetSdkVersion\'u</xliff:g> 25 ya da daha altı ile değiştirmelidir.</string>
+    <string name="legacy_source_target_too_high_send_feedback">Geribildirim <xliff:g id="source_name" example="Güzel duvar kağıtları">%s</xliff:g> gönder</string>
     <string name="legacy_source_target_too_high_learn_more">Daha fazla bilgi</string>
     <string name="legacy_source_target_too_high_dismiss">Anladım</string>
 </resources>
