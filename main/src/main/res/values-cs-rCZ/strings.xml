@@ -62,9 +62,9 @@
     <string name="set_as_wallpaper_failed">Obrázek nelze načíst</string>
     <string name="tutorial_subtitle">Dvojím klepnutím na rozmazanou tapetu ji na chvíli zaostříte</string>
     <string name="get_more_sources">Získat další zdroje</string>
-    <string name="toast_link_effects">Efekty domovské a zamykací obrazovky jsou nyní propojeny</string>
-    <string name="action_link_effects_off">Domovská a zamykací obrazovka jsou oddělené</string>
-    <string name="toast_link_effects_off">Efekty domovské a zamykací obrazovky už nejsou propojeny</string>
+    <string name="toast_link_effects">Efekty domovské &amp; zamykací obrazovky jsou nyní propojeny</string>
+    <string name="action_link_effects_off">Domovská &amp; zamykací obrazovka jsou oddělené</string>
+    <string name="toast_link_effects_off">Efekty domovské &amp; zamykací obrazovky už nejsou propojeny</string>
     <string name="reset_advanced_settings_defaults">Resetovat posuvníky</string>
     <string name="browse_refresh">Obnovit</string>
     <string name="browse_set_wallpaper">Nastavit aktuální tapetu</string>
