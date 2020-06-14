@@ -30,7 +30,6 @@
     <string name="browse_set_wallpaper">Aseta taustakuvaksi</string>
     <string name="tasker_setting_dialog_title">Valitse toiminto</string>
     <string name="gestures_double_tap_title">Kaksoisnapsautus</string>
-    <string name="gestures_double_tap_description">Käynnistä valitsemasi toiminto kaksoisnapauttamalla sumennettua taustakuvaa.</string>
     <string name="gestures_tap_action_view_details">Näytä teoksen tiedot</string>
     <string name="gestures_tap_action_none">Ei mitään</string>
     <string name="actions_always_dark">Aina tumma</string>
