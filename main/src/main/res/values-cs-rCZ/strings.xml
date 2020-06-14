@@ -26,7 +26,6 @@
     <string name="notification_settings_done">Hotovo</string>
     <string name="auto_advance_settings">Nastavení automatického pokračování</string>
     <string name="auto_advance_disabled">Automatické pokračování je vypnuté</string>
-    <string name="auto_advance_disabled_description">Starší zdroje zpracovávají načítání tapet samostatně a nepodporují Automatické pokračování</string>
     <string name="auto_advance_title">Automatické pokračování</string>
     <string name="auto_advance_wifi">Automaticky pokračovat pouze na Wi-Fi</string>
     <string name="auto_advance_interval">Interval</string>
@@ -72,9 +71,7 @@
     <string name="actions_gestures">Přizpůsobit gesta</string>
     <string name="gestures_title">Gesta</string>
     <string name="gestures_double_tap_title">Dvojité klepnutí</string>
-    <string name="gestures_double_tap_description">Dvakrát klepněte na rozmazanou tapetu na domovské obrazovce pro vyvolání vybrané akce.</string>
     <string name="gestures_three_finger_tap_title">Klepnutí třemi prsty</string>
-    <string name="gestures_three_finger_tap_description">Klepněte třemi prsty na rozmazanou tapetu na domovské obrazovce pro vyvolání vybrané akce.</string>
     <string name="gestures_tap_action_temporary_disable">Dočasně vypnout efekty</string>
     <string name="gestures_tap_action_next">Další obrázek</string>
     <string name="gestures_tap_action_view_details">Zobrazit podrobnosti o obrázku</string>
