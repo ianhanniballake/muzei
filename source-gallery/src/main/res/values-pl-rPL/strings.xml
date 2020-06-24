@@ -40,7 +40,7 @@
     <string name="gallery_touch_to_view">Dotknij, aby wyświetlić</string>
     <string name="gallery_shared_from">Udostępnione z <xliff:g id="app_name" example="Gallery">%s</xliff:g></string>
     <plurals name="gallery_add_photos_success">
-        <item quantity="one"><xliff:g id="quantity" example="1">%d</xliff:g> pomyślnie dodano obraz\ndo źródła \"Moje zdjęcia\"</item>
+        <item quantity="one">Pomyślnie dodano <xliff:g id="quantity" example="1">%d</xliff:g> obraz\ndo źródła \"Moje zdjęcia\"</item>
         <item quantity="few">Pomyślnie dodano <xliff:g id="quantity" example="2">%d</xliff:g> obrazy\ndo źródła \"Moje zdjęcia\"</item>
         <item quantity="many">Pomyślnie dodano <xliff:g id="quantity" example="5">%d</xliff:g> obrazów\ndo źródła \"Moje zdjęcia\"</item>
         <item quantity="other">Pomyślnie dodano <xliff:g id="quantity" example="5">%d</xliff:g> obrazów\ndo źródła \"Moje zdjęcia\"</item>
