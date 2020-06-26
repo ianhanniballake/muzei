@@ -20,8 +20,8 @@
     <string name="settings_home_screen_title">Écran d’accueil</string>
     <string name="settings_lock_screen_title">Écran de verrouillage</string>
     <string name="settings_blur_amount_title">Flou</string>
-    <string name="settings_dim_amount_title">Assombrir</string>
-    <string name="settings_grey_amount_title">Gris</string>
+    <string name="settings_dim_amount_title">Luminosité</string>
+    <string name="settings_grey_amount_title">Noir &amp; blanc</string>
     <string name="notification_new_wallpaper">Nouveau fond d\'écran</string>
     <string name="notification_new_wallpaper_channel_name">Nouveaux fonds d\'écran</string>
     <string name="notification_settings">Paramètres de notification</string>
@@ -68,4 +68,14 @@
         <item quantity="one"><xliff:g id="quantity" example="1">%1$d</xliff:g> Ancienne Source trouvée</item>
         <item quantity="other"><xliff:g id="quantity" example="2">%1$d</xliff:g> Anciennes sources trouvées</item>
     </plurals>
+    <string name="get_more_sources">Obtenir d\'autres sources</string>
+    <string name="reset_advanced_settings_defaults">Réinitialiser les réglages</string>
+    <string name="play_store_not_found">Impossible d\'ouvrir le <xliff:g id="google_play">Google Play</xliff:g> Store.</string>
+    <string name="browse_refresh">Rafraîchir</string>
+    <string name="actions_gestures">Personnaliser les gestes</string>
+    <string name="gestures_tap_action_temporary_disable">Désactiver les effets temporairement</string>
+    <string name="gestures_tap_action_next">Œuvre suivante</string>
+    <string name="gestures_tap_action_view_details">Voir les détails de l\'œuvre</string>
+    <string name="gestures_tap_action_none">Aucun</string>
+    <string name="about_title">À propos de <xliff:g id="muzei_name">Muzei</xliff:g></string>
 </resources>
