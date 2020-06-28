@@ -44,7 +44,7 @@
     <string name="auto_advance_interval_24h">Toutes les 24 heures</string>
     <string name="auto_advance_interval_72h">Tous les 3 jours</string>
     <string name="auto_advance_interval_never">Ne pas avancer automatiquement</string>
-    <string name="auto_advance_tasker">Pour un contrôle précis sur ce qui pousse votre fond d\'écran à changer, utilisez l\'action \'Œuvre suivante\' disponible dans <xliff:g id="tasker_name">Tasker</xliff:g> sous Plugin -&gt; <xliff:g id="muzei_name">Muzei</xliff:g> et désactivez l\'avancemenent automatique ici.</string>
+    <string name="auto_advance_tasker">Pour un contrôle précis sur ce qui pousse votre fond d\'écran à changer, utilisez l\'action \'Œuvre suivante\' disponible dans <xliff:g id="tasker_name">Tasker</xliff:g> sous Plugin -&gt; <xliff:g id="muzei_name">Muzei</xliff:g> et désactivez l\'avance automatique ici.</string>
     <string name="auto_advance_tasker_name"><xliff:g id="tasker_name">Tasker</xliff:g></string>
     <string name="action_activate">Activer</string>
     <string name="error_view_details">Impossible de voir les détails de l\'œuvre.</string>
