@@ -31,7 +31,7 @@
     <string name="notification_settings_moved_text">Vérifiez vos paramètres de notification</string>
     <string name="auto_advance_settings">Paramètres d\'Avance Automatique</string>
     <string name="auto_advance_disabled">Avance Automatique désactivée</string>
-    <string name="auto_advance_disabled_description">Les Anciennes Sources gèrent leur propre chargement de fond d\'écran et ne prennent pas en charge l\'Avancement Automatique</string>
+    <string name="auto_advance_disabled_description">Les Anciennes Sources gèrent leur propre chargement de fond d\'écran et ne prennent pas en charge l\'Avance Automatique</string>
     <string name="auto_advance_title">Avance Automatique</string>
     <string name="auto_advance_description">Contrôle lorsque <xliff:g id="muzei_name">Muzei</xliff:g> passe automatiquement au fond d\'écran suivant.</string>
     <string name="auto_advance_wifi">Avance Automatique uniquement en Wi-Fi</string>
