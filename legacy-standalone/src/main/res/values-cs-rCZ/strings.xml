@@ -14,4 +14,12 @@
   See the License for the specific language governing permissions and
   limitations under the License.
   -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="legacy_app_name"><xliff:g id="muzei_name">Muzei</xliff:g> Legacy</string>
+    <string name="legacy_source_provider_name">Starší zdroje</string>
+    <string name="legacy_source_warning_title">Aktivovat starší zdroj?</string>
+    <string name="legacy_source_warning_message">Starší zdroje se načítají podle svého vlastního načasování a nepoužívají automatické posouvání. To může vést k většímu využití dat, pokud starší zdroj nemá své vlastní nastavení stahování pouze přes WiFi.</string>
+    <string name="legacy_source_warning_positive">Pokračovat</string>
+    <string name="legacy_source_warning_learn_more">Zjistit více</string>
+    <string name="legacy_source_warning_negative">Zrušit</string>
+</resources>
