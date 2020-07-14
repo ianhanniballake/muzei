@@ -71,6 +71,7 @@
     <string name="legacy_source_info_app_info">Infos sur l\'appli</string>
     <string name="legacy_source_info_send_feedback">Envoyer des commentaires</string>
     <string name="get_more_sources">Obtenir d\'autres sources</string>
+    <string name="action_link_effects">Accueil 🔗 Verrouillage</string>
     <string name="reset_advanced_settings_defaults">Réinitialiser les réglages</string>
     <string name="play_store_not_found">Impossible d\'ouvrir le <xliff:g id="google_play">Google Play</xliff:g> Store.</string>
     <string name="browse_refresh">Rafraîchir</string>
