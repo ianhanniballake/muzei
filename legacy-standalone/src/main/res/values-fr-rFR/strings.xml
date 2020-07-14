@@ -18,7 +18,7 @@
     <string name="legacy_app_name"><xliff:g id="muzei_name">Muzei</xliff:g> Legacy</string>
     <string name="legacy_source_provider_name">Anciennes sources</string>
     <string name="legacy_source_warning_title">Activer une ancienne source ?</string>
-    <string name="legacy_source_warning_message">Les anciennes sources se chargent selon leur propre calendrier et n\'utilisent pas l\'avance automatique. Cela peut entraîner une utilisation supplémentaire des données si l\'ancienne source n\'a pas sa propre configuration WiFi.</string>
+    <string name="legacy_source_warning_message">Les anciennes sources se mettent à jour selon leur propre calendrier et n\'utilisent pas l\'avance automatique. Cela peut entraîner une utilisation supplémentaire des données si l\'ancienne source n\'a pas sa propre configuration WiFi.</string>
     <string name="legacy_source_warning_positive">Continuer</string>
     <string name="legacy_source_warning_learn_more">En savoir plus</string>
     <string name="legacy_source_warning_negative">Annuler</string>
