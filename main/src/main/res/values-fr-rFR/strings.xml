@@ -48,6 +48,7 @@
     <string name="auto_advance_tasker_name"><xliff:g id="tasker_name">Tasker</xliff:g></string>
     <string name="action_activate">Activer</string>
     <string name="error_view_details">Impossible de voir les détails de l\'œuvre.</string>
+    <string name="error_wallpaper_chooser">Impossible de lancer le sélecteur de fond d\'écran. Vous pouvez toujours activer <xliff:g id="muzei_name">Muzei</xliff:g> en choisissant \'Fonds d\'écran animés\' dans le sélecteur de fond d\'écran de votre écran d\'accueil.</string>
     <string name="section_choose_source">Sources</string>
     <string name="section_effects">Effets</string>
     <string name="action_next_artwork">Œuvre suivante</string>
@@ -68,13 +69,36 @@
         <item quantity="one"><xliff:g id="quantity" example="1">%1$d</xliff:g> Ancienne Source trouvée</item>
         <item quantity="other"><xliff:g id="quantity" example="2">%1$d</xliff:g> Anciennes sources trouvées</item>
     </plurals>
+    <plurals name="legacy_unsupported_text">
+        <item quantity="one"><xliff:g id="quantity" example="1">%1$d</xliff:g> source non prise en charge détectée</item>
+        <item quantity="other"><xliff:g id="quantity" example="2">%1$d</xliff:g> sources non prises en charge détectées</item>
+    </plurals>
+    <string name="legacy_source_info_title">Anciennes sources</string>
+    <string name="legacy_source_info_subtitle">Les sources construites à partir de l\'ancienne API ne sont plus directement supportées par <xliff:g id="muzei_name">Muzei</xliff:g>.</string>
     <string name="legacy_source_info_app_info">Infos sur l\'appli</string>
     <string name="legacy_source_info_send_feedback">Envoyer des commentaires</string>
+    <string name="legacy_source_all_uninstalled">Toutes les anciennes sources ont été désinstallées</string>
+    <string name="done">Terminé</string>
+    <string name="set_as_wallpaper_using_muzei">Fond d\'écran (en utilisant <xliff:g id="muzei_name">Muzei</xliff:g>)</string>
+    <string name="set_as_wallpaper_failed">Impossible de lire l\'œuvre</string>
+    <string name="tutorial_main">Ouvrez l\'application <xliff:g id="muzei_name">Muzei</xliff:g> pour voir votre fond d\'écran</string>
     <string name="get_more_sources">Obtenir d\'autres sources</string>
+    <string name="get_more_sources_description">Changez entièrement votre fond d\'écran avec des sources supplémentaires installées depuis le magasin <xliff:g id="google_play">Google Play</xliff:g></string>
     <string name="action_link_effects">Accueil 🔗 Verrouillage</string>
+    <string name="toast_link_effects">Les effets de l\'écran d\'accueil &amp; de verrouillage sont maintenant liés</string>
+    <string name="action_link_effects_off">Les effets de l\'écran d\'accueil &amp; de verrouillage ne sont pas liés</string>
+    <string name="toast_link_effects_off">Les effets de l\'écran d\'accueil &amp; de verrouillage ne sont plus liés</string>
     <string name="reset_advanced_settings_defaults">Réinitialiser les réglages</string>
-    <string name="play_store_not_found">Impossible d\'ouvrir le <xliff:g id="google_play">Google Play</xliff:g> Store.</string>
+    <string name="play_store_not_found">Impossible d\'ouvrir le magasin <xliff:g id="google_play">Google Play</xliff:g>.</string>
     <string name="browse_refresh">Rafraîchir</string>
+    <string name="browse_set_wallpaper">Définir le fond d\'écran actuel</string>
+    <string name="browse_set_wallpaper_with_title">Définit le fond d\'écran actuel à \"<xliff:g id="image_name" example="IMG14227.jpg">%s</xliff:g>\"</string>
+    <string name="missing_resources_title">Installation invalide de <xliff:g id="muzei_name">Muzei</xliff:g></string>
+    <string name="missing_resources_message"><xliff:g id="muzei_name">Muzei</xliff:g> est dans un état invalide. Veuillez désinstaller <xliff:g id="muzei_name">Muzei</xliff:g> et l\'installer depuis le magasin <xliff:g id="google_play">Google Play</xliff:g> pour réparer votre installation.</string>
+    <string name="missing_resources_open">Ouvrir le magasin <xliff:g id="google_play">Google Play</xliff:g></string>
+    <string name="missing_resources_quit">Fermer <xliff:g id="muzei_name">Muzei</xliff:g></string>
+    <string name="tasker_setting_dialog_title">Sélectionner l\'action</string>
+    <string name="tasker_action_select_provider">Sélectionner <xliff:g id="source_name" example="Nice Wallpapers">%s</xliff:g></string>
     <string name="actions_gestures">Personnaliser les gestes</string>
     <string name="gestures_title">Gestes</string>
     <string name="gestures_tap_action_temporary_disable">Désactiver les effets temporairement</string>
@@ -83,4 +107,7 @@
     <string name="gestures_tap_action_none">Aucun</string>
     <string name="actions_always_dark">Thème sombre</string>
     <string name="about_title">À propos de <xliff:g id="muzei_name">Muzei</xliff:g></string>
+    <string name="about_version_template">v<xliff:g id="version_number" example="3.3.0 Beta">%1$s</xliff:g></string>
+    <string name="app_author"><xliff:g id="roman_nurik">Roman Nurik</xliff:g> et <xliff:g id="ian_lake">Ian Lake</xliff:g></string>
+    <string name="app_context_description">Un musée vivant pour votre écran d\'accueil</string>
 </resources>
