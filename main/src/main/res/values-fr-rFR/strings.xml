@@ -110,7 +110,7 @@
     <string name="gestures_tap_action_next">Œuvre suivante</string>
     <string name="gestures_tap_action_view_details">Voir les détails de l\'œuvre</string>
     <string name="gestures_tap_action_none">Aucun</string>
-    <string name="actions_always_dark">Thème sombre</string>
+    <string name="actions_always_dark">Toujours sombre</string>
     <string name="about_title">À propos de <xliff:g id="muzei_name">Muzei</xliff:g></string>
     <string name="about_body"><![CDATA[        Fait par Roman Nurik et Ian Lake, avec des contributions majeures de
         la <a href="http://code.muzei.co">communauté open source</a>.
