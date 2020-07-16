@@ -20,7 +20,7 @@
     <string name="settings_home_screen_title">Écran d’accueil</string>
     <string name="settings_lock_screen_title">Écran de verrouillage</string>
     <string name="settings_blur_amount_title">Flou</string>
-    <string name="settings_dim_amount_title">Luminosité</string>
+    <string name="settings_dim_amount_title">Obscurité</string>
     <string name="settings_grey_amount_title">Noir &amp; blanc</string>
     <string name="notification_new_wallpaper">Nouveau fond d\'écran</string>
     <string name="notification_new_wallpaper_channel_name">Nouveaux fonds d\'écran</string>
