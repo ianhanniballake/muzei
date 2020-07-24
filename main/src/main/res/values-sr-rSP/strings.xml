@@ -20,7 +20,7 @@
     <string name="settings_lock_screen_title">Закључани екран</string>
     <string name="settings_blur_amount_title">Замагљење</string>
     <string name="settings_dim_amount_title">Затамљење</string>
-    <string name="settings_grey_amount_title">Сиво</string>
+    <string name="settings_grey_amount_title">Сивило</string>
     <string name="notification_new_wallpaper">Нова позадина</string>
     <string name="notification_new_wallpaper_channel_name">Нове позадине</string>
     <string name="notification_settings">Поставке обавештења</string>
@@ -49,6 +49,21 @@
     <string name="legacy_action_send_feedback">Пошаљи повратне информације</string>
     <string name="legacy_source_info_app_info">Информације о апликацији</string>
     <string name="legacy_source_info_send_feedback">Пошаљи повратне информације</string>
+    <string name="done">Готово</string>
+    <string name="set_as_wallpaper_using_muzei">Позадина (из <xliff:g id="muzei_name">Muzei</xliff:g>)</string>
+    <string name="tutorial_main">Отвори апликацију <xliff:g id="muzei_name">Muzei</xliff:g> да видиш своју позадину</string>
+    <string name="tutorial_subtitle">Брзо двапут притисни замућену позадину на почетном екрану како би је привремено видео оштру</string>
+    <string name="get_more_sources">Пронађи још извора</string>
+    <string name="get_more_sources_description">Потпуно промени своју позадину тако што ћеш инсталирати додатне изворе са <xliff:g id="google_play">Google Play</xliff:g> продавнице</string>
+    <string name="reset_advanced_settings_defaults">Ресетуј клизаче</string>
+    <string name="play_store_not_found">Није могуће отворити <xliff:g id="google_play">Google Play</xliff:g> продавницу.</string>
     <string name="browse_refresh">Освежи</string>
     <string name="browse_set_wallpaper">Постави позадину</string>
+    <string name="browse_set_wallpaper_with_title">Постави \"<xliff:g id="image_name" example="IMG14227.jpg">%s</xliff:g>\" као позадину</string>
+    <string name="missing_resources_message"><xliff:g id="muzei_name">Muzei</xliff:g> је у лошем стању. Молимо деинсталирај <xliff:g id="muzei_name">Muzei</xliff:g> и поново инсталирај са <xliff:g id="google_play">Google Play</xliff:g> продавнице како би се поправило.</string>
+    <string name="missing_resources_open">Отвори <xliff:g id="google_play">Google Play</xliff:g> продавницу</string>
+    <string name="missing_resources_quit">Затвори <xliff:g id="muzei_name">Muzei</xliff:g></string>
+    <string name="gestures_tap_action_none">Ниједан</string>
+    <string name="actions_always_dark">Увек тамна тема</string>
+    <string name="about_title">О <xliff:g id="muzei_name">Muzei</xliff:g></string>
 </resources>
