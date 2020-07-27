@@ -30,6 +30,7 @@
     <string name="notification_settings_moved_text">Revisa tus ajustes de notificación</string>
     <string name="auto_advance_settings">Ajustes de Avance Automático</string>
     <string name="auto_advance_disabled">Avance automático desactivado</string>
+    <string name="auto_advance_disabled_description">Las Fuentes Antiguas manejan su propio tiempo de carga y no son compatibles con el avance automático</string>
     <string name="auto_advance_title">Avance Automático</string>
     <string name="auto_advance_wifi">Avance automático sólo en Wi-Fi</string>
     <string name="auto_advance_interval">Intervalo</string>
