@@ -44,6 +44,8 @@
     <string name="auto_advance_interval_24h">כל 24 שעות</string>
     <string name="auto_advance_interval_72h">כל 3 ימים</string>
     <string name="auto_advance_interval_never">לא להתקדם אוטומטית</string>
+    <string name="auto_advance_tasker">לשליטה מדוייקת על הפעולות לשינוי הרקע, השתמשו בפעולת \'היצירה הבאה\' שזמינה ב- <xliff:g id="tasker_name">Tasker</xliff:g> תחת ההרחבה &gt; <xliff:g id="muzei_name">Muzei</xliff:g> ובטלו כאן את ההתקדמות האוטומטית.</string>
+    <string name="auto_advance_tasker_name"><xliff:g id="tasker_name">Tasker</xliff:g></string>
     <string name="action_activate">הפעלה</string>
     <string name="error_view_details">לא ניתן להציג פרטי היצירה.</string>
     <string name="section_choose_source">מקורות</string>
@@ -64,4 +66,18 @@
     <string name="legacy_source_info_send_feedback">שליחת משוב</string>
     <string name="legacy_source_all_uninstalled">כל המקורות הישנים הוסרו</string>
     <string name="done">סיום</string>
+    <string name="set_as_wallpaper_failed">לא ניתן לקרא את היצירה</string>
+    <string name="get_more_sources">הצגת מקורות נוספים</string>
+    <string name="browse_refresh">רענון</string>
+    <string name="browse_set_wallpaper">קביעת הרקע הנוכחי</string>
+    <string name="tasker_setting_dialog_title">בחירת פעולה</string>
+    <string name="gestures_title">מחוות</string>
+    <string name="gestures_double_tap_title">לחיצה כפולה</string>
+    <string name="gestures_double_tap_description">לחיצה כפולה על הרקע המטושטש במסך הבית להפעלת פעולה לבחירתכם.</string>
+    <string name="gestures_three_finger_tap_title">לחיצת שלוש אצבעות</string>
+    <string name="gestures_tap_action_next">היצירה הבאה</string>
+    <string name="gestures_tap_action_view_details">הצגת פרטי יצירה</string>
+    <string name="gestures_tap_action_none">כלום</string>
+    <string name="actions_always_dark">תמיד כהה</string>
+    <string name="about_title">אודות <xliff:g id="muzei_name">Muzei</xliff:g></string>
 </resources>
