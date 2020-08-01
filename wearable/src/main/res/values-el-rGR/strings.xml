@@ -15,5 +15,7 @@
   limitations under the License.
   -->
 <resources>
+    <string name="complication_artwork_label">Έργο τέχνης</string>
+    <string name="next_artwork">Επόμενο έργο τέχνης</string>
     <string name="config_show_date_title">Ημερομηνία</string>
 </resources>
