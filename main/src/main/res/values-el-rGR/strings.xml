@@ -58,6 +58,7 @@
     <string name="browse_refresh">Ανανέωση</string>
     <string name="browse_set_wallpaper">Εφαρμογή ταπετσαρίας</string>
     <string name="tasker_setting_dialog_title">Επιλέξτε ενέργεια</string>
+    <string name="actions_gestures">Προσαρμογή Κινήσεων</string>
     <string name="gestures_title">Κινήσεις</string>
     <string name="gestures_double_tap_title">Διπλό άγγιγμα</string>
     <string name="gestures_tap_action_temporary_disable">Προσωρινή απενεργοποίηση των εφέ</string>
@@ -66,6 +67,20 @@
     <string name="gestures_tap_action_none">Καμία</string>
     <string name="actions_always_dark">Πάντα σκοτεινό</string>
     <string name="about_title">Σχετικά με το <xliff:g id="muzei_name">Muzei</xliff:g></string>
+    <string name="about_body"><![CDATA[        Αναπτύχθηκε από τους Roman Nurik και Ian Lake, με σημαντικές συνεισφορές από
+        την <a href="http://code.muzei.co">κοινότητα ανοιχτού κώδικα</a>.
+        <i>Muzei</i> είναι μια μεταγραφή της Ρωσικής λέξης
+        <a href="http://translate.google.com/#en/ru/museum"><i>музей</i></a>, η οποία σημαίνει
+        &#8220;μουσείο.&#8221;<br><br>
+
+        Πνευματικά δικαιώματα 2013&ndash;2018 Google Inc. Με την επιφύλαξη κάθε νόμιμου δικαιώματος.
+        <a href="http://m.google.com/utos">Όροι Χρήσης</a>,
+        <a href="http://www.google.com/policies/privacy/">Πολιτική Απορρήτου</a>&nbsp;<br><br>
+
+        Θερμά ευχαριστώ στα εξής πρότζεκτ ανοιχτού κώδικα:<br>
+        &bull; <b><a href="http://square.github.io/okhttp/">OkHttp</a> and <a href="http://square.github.io/picasso/">Picasso</a></b> της Square<br>
+        &bull; <b><a href="https://github.com/GLWallpaperService/GLWallpaperService">GLWallpaperService</a></b> των Robert Green, Mark F. Guerra, και άλλων
+    ]]></string>
     <string name="about_version_template">v<xliff:g id="version_number" example="3.3.0 Beta">%1$s</xliff:g></string>
     <string name="app_author"><xliff:g id="roman_nurik">Roman Nurik</xliff:g> και <xliff:g id="ian_lake">Ian Lake</xliff:g></string>
     <string name="app_context_description">Ένα ζωντανό μουσείο για την αρχική σας οθόνη</string>
