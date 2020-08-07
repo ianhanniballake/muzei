@@ -67,11 +67,13 @@
     <string name="legacy_action_send_feedback">שליחת משוב</string>
     <string name="legacy_summary_title">מקורות ישנים אינם נתמכים יותר</string>
     <string name="legacy_source_info_title">מקורות ישנים</string>
+    <string name="legacy_source_info_app_info">פרטי אפליקציה</string>
     <string name="legacy_source_info_send_feedback">שליחת משוב</string>
     <string name="legacy_source_all_uninstalled">כל המקורות הישנים הוסרו</string>
     <string name="done">סיום</string>
     <string name="set_as_wallpaper_failed">לא ניתן לקרא את היצירה</string>
     <string name="get_more_sources">הצגת מקורות נוספים</string>
+    <string name="reset_advanced_settings_defaults">איפוס מחוונים</string>
     <string name="browse_refresh">רענון</string>
     <string name="browse_set_wallpaper">קביעת הרקע הנוכחי</string>
     <string name="tasker_setting_dialog_title">בחירת פעולה</string>
