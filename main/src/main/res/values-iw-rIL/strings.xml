@@ -48,6 +48,8 @@
     <string name="auto_advance_tasker_name"><xliff:g id="tasker_name">Tasker</xliff:g></string>
     <string name="action_activate">הפעלה</string>
     <string name="error_view_details">לא ניתן להציג פרטי היצירה.</string>
+    <string name="error_wallpaper_chooser">לא ניתן להפעיל את מסך בחירת הרקע. ניתן עדיין להפעיל את <xliff:g id="muzei_name">Muzei</xliff:g> על ידי בחירת \'רקעים חיים\' במסך בחירת הרקע של
+ מסך הבית.</string>
     <string name="section_choose_source">מקורות</string>
     <string name="section_effects">אפקטים</string>
     <string name="action_next_artwork">היצירה הבאה</string>
@@ -55,10 +57,12 @@
     <string name="action_user_command">עוד</string>
     <string name="action_user_command_prompt">בחירת פעולה</string>
     <string name="action_artwork_info">נתוני יצירה</string>
+    <string name="action_artwork_info_disabled">אין נתוני יצירה עבור היצירה הנוכחית.</string>
     <string name="provider_settings">הגדרות</string>
     <string name="provider_browse">דפדוף</string>
     <string name="legacy_notification_channel_name">מקורות ישנים</string>
     <string name="legacy_notification_title"><xliff:g id="source_name" example="רקעים נחמדים">%s</xliff:g> אינם נתמכים יותר</string>
+    <string name="legacy_notification_text"><xliff:g id="muzei_name">Muzei</xliff:g> לא תומך ישירות במקורות שנבנו עם ממשק API מקור מיושן.</string>
     <string name="legacy_action_learn_more">מידע נוסף</string>
     <string name="legacy_action_send_feedback">שליחת משוב</string>
     <string name="legacy_summary_title">מקורות ישנים אינם נתמכים יותר</string>
