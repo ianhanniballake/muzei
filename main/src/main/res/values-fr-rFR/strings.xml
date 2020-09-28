@@ -48,7 +48,7 @@
     <string name="auto_advance_tasker_name"><xliff:g id="tasker_name">Tasker</xliff:g></string>
     <string name="action_activate">Activer</string>
     <string name="error_view_details">Impossible de voir les détails de l\'œuvre.</string>
-    <string name="error_wallpaper_chooser">Impossible de lancer le sélecteur de fond d\'écran. Vous pouvez toujours activer <xliff:g id="muzei_name">Muzei</xliff:g> en choisissant \'Fonds d\'écran animés\' dans le sélecteur de fond d\'écran de votre écran d\'accueil.</string>
+    <string name="error_wallpaper_chooser">Impossible de lancer le sélecteur de fonds d\'écran. Vous pouvez toujours activer <xliff:g id="muzei_name">Muzei</xliff:g> en choisissant \'Fonds d\'écran animés\' dans le sélecteur de fonds d\'écran de votre écran d\'accueil.</string>
     <string name="section_choose_source">Sources</string>
     <string name="section_effects">Effets</string>
     <string name="action_next_artwork">Œuvre suivante</string>
