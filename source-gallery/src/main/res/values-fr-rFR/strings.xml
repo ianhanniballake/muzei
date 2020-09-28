@@ -46,7 +46,7 @@
         <item quantity="other">Impossible d\'ajouter <xliff:g id="quantity" example="2">%d</xliff:g> images\nà la source « Mes photos »</item>
     </plurals>
     <string name="gallery_enable_random">Photos aléatoires de l\'appareil photo</string>
-    <string name="gallery_permission_rationale">Autoriser la permission de stockage pour afficher des photos aléatoires comme arrière-plan.</string>
+    <string name="gallery_permission_rationale">Autoriser l\'accès au stockage pour utiliser des photos aléatoires comme fond d\'écran.</string>
     <string name="gallery_edit_settings">Modifier les Autorisations de l\'Application</string>
-    <string name="gallery_denied_explanation">Vous devez activer la permission <b>Stockage</b> pour utiliser des photos aléatoires comme arrière-plan.</string>
+    <string name="gallery_denied_explanation">Vous devez autoriser l\'accès au <b>Stockage</b> pour utiliser des photos aléatoires en tant que fond d\'écran.</string>
 </resources>
