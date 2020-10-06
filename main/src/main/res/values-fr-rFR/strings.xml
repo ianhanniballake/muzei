@@ -92,8 +92,8 @@
     <string name="reset_advanced_settings_defaults">Réinitialiser les curseurs</string>
     <string name="play_store_not_found">Impossible d\'ouvrir le <xliff:g id="google_play">Google Play</xliff:g> Store.</string>
     <string name="browse_refresh">Rafraîchir</string>
-    <string name="browse_set_wallpaper">Définit le fond d\'écran actuel</string>
-    <string name="browse_set_wallpaper_with_title">Définit le fond d\'écran actuel à \"<xliff:g id="image_name" example="IMG14227.jpg">%s</xliff:g>\"</string>
+    <string name="browse_set_wallpaper">Défini en tant que fond d\'écran</string>
+    <string name="browse_set_wallpaper_with_title">Fond d\'écran défini à \"<xliff:g id="image_name" example="IMG14227.jpg">%s</xliff:g>\"</string>
     <string name="missing_resources_title">Installation de <xliff:g id="muzei_name">Muzei</xliff:g> invalide</string>
     <string name="missing_resources_message"><xliff:g id="muzei_name">Muzei</xliff:g> est dans un état invalide. Veuillez désinstaller <xliff:g id="muzei_name">Muzei</xliff:g> et l\'installer depuis le <xliff:g id="google_play">Google Play</xliff:g> Store pour réparer votre installation.</string>
     <string name="missing_resources_open">Ouvrir le <xliff:g id="google_play">Google Play</xliff:g> Store</string>
