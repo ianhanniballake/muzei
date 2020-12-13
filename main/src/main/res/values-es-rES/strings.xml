@@ -27,7 +27,7 @@
     <string name="notification_settings_failed">Abrir los ajustes de las notificaciones falló, por favor cambie la configuración de <xliff:g id="muzei_name">Muzei</xliff:g>en la aplicación de configuración.</string>
     <string name="notification_settings_done">Hecho</string>
     <string name="notification_settings_moved_title">Los ajustes de notificación se han movido</string>
-    <string name="notification_settings_moved_text">Revisa tus ajustes de notificación</string>
+    <string name="notification_settings_moved_text">Revisa tus ajustes de notificaciones</string>
     <string name="auto_advance_settings">Ajustes de Avance Automático</string>
     <string name="auto_advance_disabled">Avance automático desactivado</string>
     <string name="auto_advance_disabled_description">Las Fuentes Antiguas manejan su propio tiempo de carga y no son compatibles con el avance automático</string>
@@ -54,6 +54,7 @@
     <string name="provider_settings">Configuraciones</string>
     <string name="provider_browse">Navegar</string>
     <string name="legacy_notification_channel_name">Fuentes Antiguas</string>
+    <string name="legacy_notification_title"><xliff:g id="source_name" example="Nice Wallpapers">%s</xliff:g> ya no es compatible</string>
     <string name="legacy_action_learn_more">Aprende más</string>
     <string name="legacy_action_send_feedback">Dinos tu opinión</string>
     <string name="legacy_source_info_title">Fuentes Antiguas</string>
